@@ -15,6 +15,7 @@ class CreateUnitTable extends Migration
     {
         Schema::create('unit', function (Blueprint $table) {
             $table->bigIncrements('CodUnit');
+            $table->foreing('CodCourse')->reference('CodCourse')->on('course');
             $table->string('title');
             $table->timestamps();
         });

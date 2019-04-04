@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateVocabularyTable extends Migration
+class CreateTimelineTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateVocabularyTable extends Migration
      */
     public function up()
     {
-        Schema::create('vocabulary', function (Blueprint $table) {
-            $table->bigIncrements('CodVocabulary');
+        Schema::create('timeline', function (Blueprint $table) {
+            $table->bigIncrements('CodTimeline');
             $table->foreing('CodModule')->reference('CodModule')->on('module');
-            $table->string('visual_element_signal');
-            $table->string('meaning');
+            $table->integer('CodElemento');
+            $table->integer('Position');
+            $table->string('typeElement');
         });
     }
 
@@ -28,6 +29,6 @@ class CreateVocabularyTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('vocabulary');
+        Schema::dropIfExists('timeline');
     }
 }

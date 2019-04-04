@@ -1,0 +1,23 @@
+# LIBRAS Academy
+
+O projeto realizado por alunos do Curso Técnico Integrado ao Ensino Médio do Instituto Federal de Educação, Ciência e Tecnologia de São Paulo – Câmpus Itapetininga, tem como principal objetivo a inclusão de surdos no ambiente escolar, por meio do desenvolvimento de um site interativo, na expectativa de ajudar os ouvintes na comunicação com os surdos, trazendo uma contradição da concepção imposta indiretamente pela sociedade em que somente o surdo deve adequar-se aos ouvintes. Pretende-se não só criar uma plataforma utilizando programas que facilitem o processo de criação, como também adquirir o aprendizado dessa língua que é pouco valorizada, por meio do acompanhamento de surdos, intérpretes e professores de LIBRAS durante o crescimento do mesmo. :
+
+* Laravel 5
+* PHP 7.1 
+* Composer
+* Service Worker
+* Json
+* Manifest.json
+* Ajax
+
+
+##Para o desenvilvimento do LIBRAS Academy, necessita conhecer as seguintes linguagens e tecnologias:
+
+* PHP
+* JavaScript
+* Sql
+* Blind
+* Sass
+* Html5
+* Css3
+* Materialize

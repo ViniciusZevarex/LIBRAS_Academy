@@ -17,6 +17,7 @@ class CreateUserModuleTable extends Migration
             $table->bigIncrements('CodUserModule');
             $table->foreing('CodUser')->reference('CodUser')->on('users');
             $table->foreing('CodModule')->reference('CodModule')->on('module');
+
             $table->timestamps();
         });
     }

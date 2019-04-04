@@ -17,6 +17,7 @@ class CreateAnswerDoubtsTable extends Migration
             $table->bigIncrements('CodAnswerDoubts');
             $table->foreing('CodUser')->reference('CodUser')->on('users');
             $table->foreing('CodDoubts')->reference('CodDoubts')->on('doubts');
+            $table->string('Description');
             $table->timestamps();
         });
     }

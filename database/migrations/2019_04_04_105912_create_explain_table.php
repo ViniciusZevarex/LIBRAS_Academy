@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateModuleTable extends Migration
+class CreateExplainTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreateModuleTable extends Migration
      */
     public function up()
     {
-        Schema::create('module', function (Blueprint $table) {
-            $table->bigIncrements('CodModule');
-            $table->foreing('CodUnit')->reference('CodUnit')->on('unit');
+        Schema::create('explain', function (Blueprint $table) {
+            $table->bigIncrements('CodExplain');
+            $table->foreing('CodModule')->reference('CodModule')->on('Module');
             $table->string('title');
+            $table->string('description');
+            $table->string('Video')->nullable;
         });
     }
 
@@ -27,6 +29,6 @@ class CreateModuleTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('module');
+        Schema::dropIfExists('explain');
     }
 }
