@@ -15,8 +15,8 @@ class CreateUserUnitTable extends Migration
     {
         Schema::create('user_unit', function (Blueprint $table) {
             $table->bigIncrements('CodUserUnit');
-            $table->foreing('CodUser')->reference('CodUser')->on('users');
-            $table->foreing('CodUnit')->reference('CodUnit')->on('unit');
+            $table->foreign('CodUser')->reference('CodUser')->on('users');
+            $table->foreign('CodUnit')->reference('CodUnit')->on('unit');
             $table->timestamps();
         });
     }

@@ -15,7 +15,7 @@ class CreateAlternativesQuizTable extends Migration
     {
         Schema::create('alternatives_quiz', function (Blueprint $table) {
             $table->bigIncrements('CodAlternativesQuiz');
-            $table->foreing('CodQuiz')->reference('CodQuiz')->on('quiz');
+            $table->foreign('CodQuiz')->reference('CodQuiz')->on('quiz');
             $table->string('description');
             $table->boolean('correct');
         });

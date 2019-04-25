@@ -15,8 +15,8 @@ class CreateAnswerDoubtsTable extends Migration
     {
         Schema::create('answer_doubts', function (Blueprint $table) {
             $table->bigIncrements('CodAnswerDoubts');
-            $table->foreing('CodUser')->reference('CodUser')->on('users');
-            $table->foreing('CodDoubts')->reference('CodDoubts')->on('doubts');
+            $table->foreign('CodUser')->reference('CodUser')->on('users');
+            $table->foreign('CodDoubts')->reference('CodDoubts')->on('doubts');
             $table->string('Description');
             $table->timestamps();
         });

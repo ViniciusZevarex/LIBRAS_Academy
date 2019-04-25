@@ -15,7 +15,7 @@ class CreateVocabularyTable extends Migration
     {
         Schema::create('vocabulary', function (Blueprint $table) {
             $table->bigIncrements('CodVocabulary');
-            $table->foreing('CodModule')->reference('CodModule')->on('module');
+            $table->foreign('CodModule')->reference('CodModule')->on('module');
             $table->string('visual_element_signal');
             $table->string('meaning');
         });
