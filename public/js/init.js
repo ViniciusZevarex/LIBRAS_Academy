@@ -56,5 +56,6 @@ $(document).scroll(function(){
     animateScroll();
     $('.collapsible').collapsible();
     $('select').formSelect();
+    $(".dropdown-trigger").dropdown();
   }); // end of document ready
 })(jQuery); // end of jQuery name space
