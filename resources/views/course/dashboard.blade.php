@@ -5,6 +5,7 @@
 @section('conteudo-view')
 <main class="content">
         <h4 class="center-align">Unidades de LIBRAS</h4>
+        <div class="divider"></div>
         <div class="row">
             <div class="col s8 m8 offset-m2">
                 <ul class="collapsible popout z-depth-2">
