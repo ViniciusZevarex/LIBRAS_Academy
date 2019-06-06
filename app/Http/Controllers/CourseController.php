@@ -12,8 +12,9 @@ class CourseController extends Controller
     public function dashboard(Request $request)
     {
         $course_id = $request->query('course');
+        $course = DB::table('course')->where('CodCourse', $course_id)->get();
 
-    	return view('course/dashboard');
+        return view('course/dashboard', compact('course'));
     }
 
     public function create()
@@ -25,10 +26,10 @@ class CourseController extends Controller
     {
         $course                     =  new Course();
         $course->title              =  $request->input('title');
-        $course->description       =  $request->input('descriptionexit');
+        $course->description        =  $request->input('description');
         $course->save();
 
-        return  redirect('course/dashboard');
+        return  redirect('course/list');
     }
 
     public function list(){
@@ -37,14 +38,4 @@ class CourseController extends Controller
         return view('course/list', compact('courses'));
     }
 
-    public function addUnits(Request $request){
-        $course_edit = $request->query('course');
-
-        $course = DB::table('course')->join('unit','course.CodCourse', '=', 'unit.CodCourse')->get();;
-
-        echo "<pre>";
-        print_r($course);
-        
-
-    }
 }

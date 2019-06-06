@@ -22,4 +22,4 @@ Route::get('/course/dashboard', 'CourseController@dashboard')->name('course_dash
 Route::get('/course/create', 'CourseController@create')->name('course_create');
 Route::post('/course/register', 'CourseController@register')->name('course_register');
 Route::get('/course/list', 'CourseController@list')->name('course_list');
-Route::get('/course/add/units', 'CourseController@addUnits')->name('course_addUnits');
+Route::get('/course/add/units', 'UnitController@addUnits')->name('course_addUnits');

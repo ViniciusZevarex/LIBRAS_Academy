@@ -15,6 +15,7 @@ class CreateModuleTable extends Migration
     {
         Schema::create('module', function (Blueprint $table) {
             $table->bigIncrements('CodModule');
+            $table->bigInteger('CodUnit')->unsigned();
             $table->foreign('CodUnit')->reference('CodUnit')->on('unit');
             $table->string('title');
         });

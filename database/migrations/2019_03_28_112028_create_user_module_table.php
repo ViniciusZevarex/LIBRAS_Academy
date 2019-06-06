@@ -15,7 +15,7 @@ class CreateUserModuleTable extends Migration
     {
         Schema::create('user_module', function (Blueprint $table) {
             $table->bigIncrements('CodUserModule');
-            $table->string('PhotoIcon')->nullable();
+            $table->bigInteger('CodUser')->unsigned();
             $table->foreign('CodUser')->reference('CodUser')->on('users');
             $table->foreign('CodModule')->reference('CodModule')->on('module');
 

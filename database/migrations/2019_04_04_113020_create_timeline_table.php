@@ -15,6 +15,7 @@ class CreateTimelineTable extends Migration
     {
         Schema::create('timeline', function (Blueprint $table) {
             $table->bigIncrements('CodTimeline');
+            $table->bigInteger('CodModule')->unsigned();
             $table->foreign('CodModule')->reference('CodModule')->on('module');
             $table->integer('CodElement');
             $table->integer('Position');

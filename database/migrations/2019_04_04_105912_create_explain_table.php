@@ -15,7 +15,8 @@ class CreateExplainTable extends Migration
     {
         Schema::create('explain', function (Blueprint $table) {
             $table->bigIncrements('CodExplain');
-            $table->foreign('CodModule')->reference('CodModule')->on('Module');
+            $table->bigInteger('CodModule')->unsigned();
+            $table->foreign('CodModule')->reference('CodModule')->on('module');
             $table->string('title');
             $table->string('description');
             $table->string('Video')->nullable;
