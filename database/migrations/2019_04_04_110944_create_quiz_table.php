@@ -16,7 +16,7 @@ class CreateQuizTable extends Migration
         Schema::create('quiz', function (Blueprint $table) {
             $table->bigIncrements('CodQuiz');
             $table->bigInteger('CodModule')->unsigned();
-            $table->foreign('CodModule')->reference('CodModule')->on('Module');
+            $table->foreign('CodModule')->references('CodModule')->on('module');
             $table->string('Question');
             $table->string('Video');
         });

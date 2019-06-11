@@ -16,8 +16,9 @@ class CreateUserModuleTable extends Migration
         Schema::create('user_module', function (Blueprint $table) {
             $table->bigIncrements('CodUserModule');
             $table->bigInteger('CodUser')->unsigned();
-            $table->foreign('CodUser')->reference('CodUser')->on('users');
-            $table->foreign('CodModule')->reference('CodModule')->on('module');
+            $table->bigInteger('CodModule')->unsigned();
+            $table->foreign('CodUser')->references('CodUser')->on('users');
+            $table->foreign('CodModule')->references('CodModule')->on('module');
 
             $table->timestamps();
         });

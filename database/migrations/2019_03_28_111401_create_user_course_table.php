@@ -16,8 +16,9 @@ class CreateUserCourseTable extends Migration
         Schema::create('user_course', function (Blueprint $table) {
             $table->bigIncrements('CodUserCourse');
             $table->bigInteger('CodUser')->unsigned();
-            $table->foreing('CodUser')->reference('CodUser')->on('users');
-            $table->foreing('CodCourse')->reference('CodCourse')->on('course');
+            $table->bigInteger('CodCourse')->unsigned();
+            $table->foreign('CodUser')->references('CodUser')->on('users');
+            $table->foreign('CodCourse')->references('CodCourse')->on('course');
             $table->timestamps();
         });
     }

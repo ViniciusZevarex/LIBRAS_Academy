@@ -16,7 +16,7 @@ class CreateDoubtsTable extends Migration
         Schema::create('doubts', function (Blueprint $table) {
             $table->bigIncrements('CodDoubts');
             $table->bigInteger('CodUser')->unsigned();
-            $table->foreign('CodUser')->reference('CodUser')->on('users');
+            $table->foreign('CodUser')->references('CodUser')->on('users');
             $table->string('title');
             $table->string('description');
             $table->timestamps();
