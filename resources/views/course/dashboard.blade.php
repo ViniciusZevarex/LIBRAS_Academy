@@ -9,8 +9,9 @@
         @foreach ($course as $c)
         <h4 class="center-align">Unidades de {{ $c->title }}</h4>
         <div class="divider"></div>
+
         <div class="row">
-            <div class="col s8 m8 offset-m2">
+            <!-- <div class="col s8 m8 offset-m2">
                 <ul class="collapsible popout z-depth-2">
                     <li>
                         <div class="collapsible-header">                        
@@ -32,11 +33,11 @@
                         </div>
                     </li>
                 </ul>
-            </div>
-
+            </div> -->
+        
             @endforeach
             
-            <a class="btn green darken-1 waves-effect waves-light col s8 m8 offset-m2" href="{{ route('course_addUnits') }}">
+            <a class="btn green darken-1 waves-effect waves-light col s8 m8 offset-m2" href="{{ route('create_units', ['course' => $c->CodCourse ]) }}">
                 Adicionar Unidades
                 <i class="material-icons right">add_circle_outline</i>
             </a>
