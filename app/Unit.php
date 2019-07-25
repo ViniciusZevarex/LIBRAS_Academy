@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Course extends Model
+class Unit extends Model
 {
     protected   $table          = 'unit';
     public      $timestamps     = false;

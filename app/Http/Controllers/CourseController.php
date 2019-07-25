@@ -5,15 +5,25 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Course;
+use App\Unit;
 
 
 class CourseController extends Controller
 {
     public function dashboard(Request $request)
     {
+        //get course
         $course_id = $request->query('course');
         $course = DB::table('course')->where('CodCourse', $course_id)->get();
 
+        //get unit of this course
+        $unit = DB::table('unit')->where('CodCourse', $course_id)->get();
+
+        
+        foreach($course as $c){
+            $c->units = $unit;
+        }
+    
         return view('course/dashboard', compact('course'));
     }
 
