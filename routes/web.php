@@ -26,9 +26,9 @@ Route::post('/course/register', 'CourseController@register')->name('course_regis
 Route::get('/course/list', 'CourseController@list')->name('course_list');
 
 //Unit
-Route::get('/course/create/units', 'UnitController@showForm')->name('units_showForm');
-Route::post('/course/register/units', 'UnitController@create')->name('create_units');
+Route::get('/unit/create/form', 'UnitController@showForm')->name('units_showForm');
+Route::post('/unit/create/', 'UnitController@create')->name('create_units');
 
 //Module
-Route::get('/unit/create/module/', 'ModuleController@showForm')->name('modules_showForm');
-Route::post('/unit/register/module/', 'ModuleController@create')->name('create_modules');
+Route::get('/module/create/form', 'ModuleController@showForm')->name('modules_showForm');
+Route::post('/module/create/', 'ModuleController@store')->name('create_modules');

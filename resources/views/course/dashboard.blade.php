@@ -20,9 +20,14 @@
                             </div>
                             <div class="collapsible-body">                      
                                 <ul class="collection">
+                                    @foreach($unit->modules as $module)
+                                        <li class="collection-item">
+                                            {{ $module->title }}
+                                        </li>
+                                    @endforeach
                                     <li class="collection-item avatar">
                                         <div>
-                                            <a class="btn green darken-1 waves-effect waves-light col s8 m8 offset-m2" href="{{ route('units_showForm', ['unit' => $unit->CodUnit ]) }}">
+                                            <a class="btn green darken-1 waves-effect waves-light col s8 m8 offset-m2" href="{{ route('modules_showForm', ['course' => $c->CodCourse]) }}">
                                                     Adicionar Modulos
                                                     <i class="material-icons right">add_circle_outline</i>
                                             </a>
@@ -36,7 +41,7 @@
         
             @endforeach
             
-            <a class="btn green darken-1 waves-effect waves-light col s8 m8 offset-m2" href="{{ route('modules_showForm', ['course' => $c->CodCourse ]) }}">
+            <a class="btn green darken-1 waves-effect waves-light col s8 m8 offset-m2" href="{{ route('units_showForm', ['course' => $c->CodCourse ]) }}">
                 Adicionar Unidades
                 <i class="material-icons right">add_circle_outline</i>
             </a>

@@ -1,5 +1,3 @@
-
-
 @extends('layouts.master')
 
 @include('components.navbar_dashboard')
@@ -7,7 +5,7 @@
 @section('conteudo-view')
 
 <main class="content">
-        <h4 class="center-align">Cadastrar Unidades</h4>
+        <h4 class="center-align">Cadastrar Módulos</h4>
         <div class="divider"></div>
         <div class="row">
 
@@ -16,14 +14,16 @@
             <div class="card-panel center-panel">
                 <h4 class="center-align"><img src="{{asset('imgs/img_website_style/black-logo.png')}}" class="form-logo"></h4>
 
-                <form  class="col s12" method="POST" action="{{ route('create_units') }}">
+                <form  class="col s12" method="POST" action="{{ route('create_modules') }}">
                     @csrf
                     {{-- titulo --}}
+                    <input type="hidden" name="course" value="{{ $course }}">
+
                     <div class="row">
                         <div class="input-field col s12">
-                            <select name="CodCourse">
-                                @foreach ($courses as $course)
-                                    <option value="{{ $course->CodCourse }}">{{ $course->title }}</option>
+                            <select name="CodUnit">
+                                @foreach ($units as $unit)
+                                    <option value="{{ $unit->CodUnit }}">{{ $unit->title }}</option>
                                 @endforeach
                             </select>
                         </div>

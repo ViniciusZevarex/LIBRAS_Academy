@@ -17,7 +17,7 @@
                     <div class="card-action">
                     <a class="waves-effect waves-light btn" href="{{ route('course_dashboard', ['course' => $course->CodCourse]) }}">Ver conteúdo</a>
                     <a class="waves-effect waves-light btn" href="#">Inscrever-se</a>
-                    <a class="waves-effect waves-light btn" href="{{ route('course_addUnits', ['course' => $course->CodCourse]) }}"><i class="large material-icons">edit</i></a>
+                    <a class="waves-effect waves-light btn" href="{{ route('create_units', ['course' => $course->CodCourse]) }}"><i class="large material-icons">edit</i></a>
                 </div>
             </div>
             </div>

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Course;
 use App\Unit;
+use App\Module;
 
 
 class CourseController extends Controller
@@ -19,11 +20,16 @@ class CourseController extends Controller
         //get unit of this course
         $unit = DB::table('unit')->where('CodCourse', $course_id)->get();
 
-        
+        foreach ($unit as $u) {
+            $CodUnit = $u->CodUnit;
+            $modules = DB::table('module')->where('CodUnit', $CodUnit)->get();
+            $u->modules = $modules;
+        }
+
         foreach($course as $c){
             $c->units = $unit;
         }
-    
+        
         return view('course/dashboard', compact('course'));
     }
 
