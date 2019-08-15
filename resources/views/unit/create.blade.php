@@ -12,7 +12,7 @@
         <div class="row">
 
         <div class="row">
-            <div class="col s12 m4 offset-m4 panel-form">
+            <div class="col s12 m4 offset-m4 panel-form form-crud-elements">
             <div class="card-panel center-panel">
                 <h4 class="center-align"><img src="{{asset('imgs/img_website_style/black-logo.png')}}" class="form-logo"></h4>
 

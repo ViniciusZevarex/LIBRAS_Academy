@@ -51,7 +51,7 @@ section.container{
 }
 
 .card-panel{
-	min-height: 200px;
+	min-height: 500px;
 }
 
 h2.main-text-section{
@@ -89,6 +89,15 @@ h2.main-text-section{
 .form-logo{
 	width : 300px;
 	margin: -10% auto;
+}
+
+.img-upload{
+	padding: 5%;
+	background-color: #ececec;
+	border: solid 1px black;
+	display: block;
+	width : 300px;
+	margin: 0 auto;	
 }
 
 .title-hero img{
@@ -163,9 +172,16 @@ div.collapsible-body{
 .center-panel{
 	display: block;
 	margin: 0 auto;
-	height: 75vh;
-	padding: 10%;
+	padding: 25%;
 	box-shadow: 13px 20px 127px -67px black;
+}
+
+.form-auth{
+	height: 95vh;
+}
+
+.form-crud-elements{
+	height: 75vh;
 }
 @media only screen and (max-width: 920px){
 	.parallax-container .section {

@@ -21,8 +21,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //Course
 Route::get('/course/dashboard', 'CourseController@dashboard')->name('course_dashboard');
-Route::get('/course/create', 'CourseController@create')->name('course_create');
-Route::post('/course/register', 'CourseController@register')->name('course_register');
+Route::get('/course/create/form', 'CourseController@create')->name('course_create');
+Route::post('/course/create', 'CourseController@register')->name('course_register');
 Route::get('/course/list', 'CourseController@list')->name('course_list');
 
 //Unit
@@ -35,3 +35,7 @@ Route::post('/module/create/', 'ModuleController@store')->name('create_modules')
 
 //Timeline
 Route::get('/timeline/edit/form', 'TimelineController@edit')->name('edit_timeline');
+Route::post('/timeline/adicionar-elemento/', 'TimelineController@criar_elemento')->name('adicionar_elemento_timeline');
+
+//Explain
+Route::get('/explain/create/form', 'ExplainController@showForm')->name('create_explain');
