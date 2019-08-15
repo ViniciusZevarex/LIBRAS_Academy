@@ -160,23 +160,12 @@ div.collapsible-body{
 	padding: 0.1em;
 }
 
-.section-right{
-	height: 100vh;
-	padding: 20% 8%;
-}
-
-.section-left{
-	height: 100vh;
-	width: 100%;
-	background-image: url('http://localhost/LIBRAS_Academy/public/imgs/img_website_style/hero_image.jpg');
-	background-size: 150%;
-}
-
 .center-panel{
 	display: block;
 	margin: 0 auto;
-	height: 60vh;
+	height: 75vh;
 	padding: 10%;
+	box-shadow: 13px 20px 127px -67px black;
 }
 @media only screen and (max-width: 920px){
 	.parallax-container .section {

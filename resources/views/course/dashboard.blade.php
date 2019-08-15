@@ -22,7 +22,17 @@
                                 <ul class="collection">
                                     @foreach($unit->modules as $module)
                                         <li class="collection-item">
-                                            {{ $module->title }}
+                                            <div class="row">
+                                                <div class="col s12 m10">
+                                                     {{ $module->title }}
+                                                </div>
+                                                <div class="col s12 m12">
+                                                    <a class="btn green darken-1 waves-effect waves-light" href="{{ route('edit_timeline', ['module' => $module->CodModule]) }}">
+                                                        Editar Timeline
+                                                        <i class="material-icons right">dashboard</i>
+                                                    </a>
+                                                </div>
+                                            </div>
                                         </li>
                                     @endforeach
                                     <li class="collection-item avatar">
@@ -38,7 +48,6 @@
                         </li>
                     </ul>
                 </div>
-        
             @endforeach
             
             <a class="btn green darken-1 waves-effect waves-light col s8 m8 offset-m2" href="{{ route('units_showForm', ['course' => $c->CodCourse ]) }}">

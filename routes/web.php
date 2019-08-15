@@ -32,3 +32,6 @@ Route::post('/unit/create/', 'UnitController@create')->name('create_units');
 //Module
 Route::get('/module/create/form', 'ModuleController@showForm')->name('modules_showForm');
 Route::post('/module/create/', 'ModuleController@store')->name('create_modules');
+
+//Timeline
+Route::get('/timeline/edit/form', 'TimelineController@edit')->name('edit_timeline');
