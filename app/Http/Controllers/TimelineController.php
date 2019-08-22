@@ -17,14 +17,15 @@ class TimelineController extends Controller
     }
 
     public function criar_elemento(Request $data){
-
-    	if($data['tipoElemento'] == 'E'){
-    		return redirect()->route('create_explain',$data['CodModule']);
-    	}elseif ($data['tipoElemento'] == 'V'){
-    		echo "Vocabulário";
-    	}elseif($data['tipoElemento'] == 'Q'){
-    		echo "Quiz";
-    	}
+        echo $data['CodModule'];
+        echo $data['tipoElemento'];
+    	// if($data['tipoElemento'] == 'E'){
+    	// 	return redirect()->route('form_explain',['CodModule' => $data['CodModule']]);
+    	// }elseif ($data['tipoElemento'] == 'V'){
+    	// 	echo "Vocabulário";
+    	// }elseif($data['tipoElemento'] == 'Q'){
+    	// 	echo "Quiz";
+    	// }
 
     }
 }

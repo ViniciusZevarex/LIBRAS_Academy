@@ -11,14 +11,15 @@
         <div class="row">
             <div class="col s12 m4 offset-m4  panel-form">
                 <div class="card-panel center-panel form-crud-elements">
-                    <form  class="col s12" method="POST" action="{{ route('create_modules') }}">
+                    <form  class="col s12" method="POST" action="{{ route('create_explain') }}" enctype="multipart/form-data">
                         @csrf
+                        <input type="hidden" name="CodModule" value="">
                         <div class="row">
                             <div class="file-field input-field">
                               <div>
                                 <label for="midia">Clique aqui para adicionar uma Mídia(Se necessário): </label>
                                 <img class="img-upload" src="{{ asset('imgs/img_website_style/upload.png') }}">
-                                <input id="midia" type="file" name="">
+                                <input id="midia" type="file" name="gif_signal">
                             </div>
                         </div>
 

@@ -38,4 +38,5 @@ Route::get('/timeline/edit/form', 'TimelineController@edit')->name('edit_timelin
 Route::post('/timeline/adicionar-elemento/', 'TimelineController@criar_elemento')->name('adicionar_elemento_timeline');
 
 //Explain
-Route::get('/explain/create/form', 'ExplainController@showForm')->name('create_explain');
+Route::get('/explain/create/form', 'ExplainController@showForm')->name('form_explain');
+Route::post('/explain/create', 'ExplainController@create')->name('create_explain');
