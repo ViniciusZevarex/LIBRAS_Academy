@@ -5,7 +5,6 @@
 <div class="row">
   <div class="col s12 m4 offset-m4 panel-form">
     <div class="card-panel center-panel">
-      <div class="col s12">
       <!--       <div class="container"> -->
         <h4 class="center-align"><img src="{{asset('imgs/img_website_style/black-logo.png')}}" class="form-logo"></h4>
         <h4 class="center-align">Entrar</h4>
@@ -69,7 +68,6 @@
           </div>
         </form>
         <!--       </div> -->
-      </div>
     </div>
   </div>
 </div>

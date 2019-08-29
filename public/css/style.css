@@ -50,8 +50,11 @@ section.container{
 	margin    : 10% 0 10% 0;
 }
 
-.card-panel{
+/* .card-panel{
 	min-height: 500px;
+} */
+.card-panel{
+	clear:both;
 }
 
 h2.main-text-section{
