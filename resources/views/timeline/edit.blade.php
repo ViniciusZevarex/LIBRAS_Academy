@@ -8,12 +8,31 @@
 	<div class="divider"></div>
 	<div class="col s8 m8 offset-m2">
 		<div class="row">
+			<div class="col s12">
+				<table class="highlight">
+					<thead>
+					<tr>
+						<th>Modulo</th>
+						<th>Tipo Elemento</th>
+					</tr>
+					</thead>
+
+					<tbody>
+					<tr>
+						<td>teste</td>
+						<td>Explicação</td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+
+
 			<form class="col s12" method="POST" action="{{ route('adicionar_elemento_timeline') }}" >
 				@csrf
 				<div class="row">
 					<div class="input-field col s12">
-						<select disabled name="CodModule">
-							<option value="{{ $module->CodModule }}" disabled selected>{{ $module->title }}</option>
+						<select name="CodModule">
+							<option value="{{ $module->CodModule }}">{{ $module->title }}</option>
 						</select>
 					</div>
 				</div>

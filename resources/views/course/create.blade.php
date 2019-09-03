@@ -10,7 +10,7 @@
 
         <div class="row">
             <div class="col s12 m4 offset-m4 panel-form form-crud-elements">
-            <div class="card-panel center-panel">
+            <div class="card-panel center-panel row">
                 <h4 class="center-align"><img src="{{asset('imgs/img_website_style/black-logo.png')}}" class="form-logo"></h4>
 
                 <form  class="col s12" method="POST" action="{{ route('course_register') }}">

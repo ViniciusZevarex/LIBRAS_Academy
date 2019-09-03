@@ -13,7 +13,7 @@ class CreateExplainTable extends Migration
      */
     public function up()
     {
-        Schema::create('explain', function (Blueprint $table) {
+        Schema::create('tblExplain', function (Blueprint $table) {
             $table->bigIncrements('CodExplain');
             $table->bigInteger('CodModule')->unsigned();
             $table->foreign('CodModule')->references('CodModule')->on('module');

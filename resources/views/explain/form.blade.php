@@ -10,7 +10,7 @@
 
         <div class="row">
             <div class="col s12 m4 offset-m4  panel-form">
-                <div class="card-panel center-panel form-crud-elements">
+                <div class="card-panel center-panel row">
                     <form  class="col s12" method="POST" action="{{ route('create_explain') }}" enctype="multipart/form-data">
                         @csrf
                         <input type="hidden" name="CodModule" value="">
@@ -23,12 +23,32 @@
                             </div>
                         </div>
 
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <select name="CodModule">
+                                    <option value="{{ $module->CodModule }}">{{ $module->title }}</option>
+                                </select>
+                            </div>
+                        </div>
 
                         <div class="row">
-                          <div class="row">
+                            <div class="input-field col s12">
+                                <input id="title" type="text" name="titulo">
+                                <label for="title">Título:</label>
+                            </div>
+                        </div>
+
+                        <div class="row">
                             <div class="input-field col s12">
                                 <textarea id="descricao" class="materialize-textarea" name="descricao"></textarea>
                                 <label for="descricao">Descrição:</label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="page" type="number" name="page">
+                                <label for="page">Número de Página na Timeline:</label>
                             </div>
                         </div>
 
