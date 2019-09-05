@@ -40,3 +40,7 @@ Route::post('/timeline/adicionar-elemento/', 'TimelineController@criar_elemento'
 //Explain
 Route::get('/explain/create/form', 'ExplainController@showForm')->name('form_explain');
 Route::post('/explain/create', 'ExplainController@create')->name('create_explain');
+
+//Vocabulary
+Route::get('/vocabulary/create/form', 'VocabularyController@showForm')->name('form_vocabulary');
+Route::post('/vocabulary/create', 'VocabularyController@create')->name('create_vocabulary');
