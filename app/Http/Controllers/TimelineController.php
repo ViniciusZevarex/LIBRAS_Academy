@@ -24,21 +24,27 @@ class TimelineController extends Controller
 		foreach($timeline as $tl){
 			if($tl->typeElement == 'E'){
 				$explain = Explain::select('title','description','video')->where('CodExplain', $tl->CodElement)->get();
+
 				foreach($explain as $ex){
 					$expl = $ex;
 				}
-				
+
 				$tl->dataElement = $expl;
 			}elseif($tl->typeElement == 'V'){
-				echo 'V';
+				$vocabulary = Vocabulary::where('CodVocabulary', $tl->CodElement)->get();
+
+				foreach($vocabulary as $vb){
+					$vcb = $vb;
+				}
+
+				$tl->dataElement = $vcb;
 			}elseif($tl->typeElement == 'Q'){
 				echo 'Q';
 			}
 		}
-		echo "<pre>";
-		print_r($timeline);
 
-    	return view('timeline.edit',compact('module'));
+
+    	return view('timeline.edit',compact('module','timeline'));
     }
 
     public function criar_elemento(Request $data){

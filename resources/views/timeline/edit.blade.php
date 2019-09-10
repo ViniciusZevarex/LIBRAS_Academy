@@ -9,22 +9,28 @@
 	<div class="col s8 m8 offset-m2">
 		<div class="row">
 			<div class="col s12">
-				<table class="highlight">
-					<thead>
-					<tr>
-						<th>Modulo</th>
-						<th>Tipo Elemento</th>
-					</tr>
-					</thead>
+        <table class="highlight">
+          <thead>
+            <tr>
+              <th>Modulo</th>
+              <th>Tipo Elemento</th>
+              <th>Página do Timeline</th>
+            </tr>
+          </thead>
 
-					<tbody>
-					<tr>
-						<td>teste</td>
-						<td>Explicação</td>
-					</tr>
-					</tbody>
-				</table>
-			</div>
+          <tbody>
+
+          @foreach($timeline as $tl)
+            <tr>
+              <td>{{$_GET['module']}}</td>
+              <td>{{$tl->typeElement}}</td>
+              <td>{{$tl->Position}}</td>
+            </tr>
+          @endforeach
+
+          </tbody>
+        </table>
+      </div>
 
 
 			<form class="col s12" method="POST" action="{{ route('adicionar_elemento_timeline') }}" >
