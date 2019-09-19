@@ -14,7 +14,7 @@ class TimelineController extends Controller
     public function edit(Request $data){
 		$module = DB::table('module')->where('CodModule', $data['module'])->get();
     	$module = $module[0];
-		
+
 		$timeline = DB::table('timeline')
 					->select('CodElement', 'typeElement','Position')
 					->where('CodModule', $data['module'])
@@ -48,13 +48,13 @@ class TimelineController extends Controller
     }
 
     public function criar_elemento(Request $data){
-		
+
     	if($data['tipoElemento'] == 'E'){
     		return redirect()->route('form_explain',['CodModule' => $data['CodModule']]);
     	}elseif ($data['tipoElemento'] == 'V'){
     		return redirect()->route('form_vocabulary',['CodModule' => $data['CodModule']]);
     	}elseif($data['tipoElemento'] == 'Q'){
-    		echo "Quiz";
+    		return redirect()->route('form_quiz',['CodModule' => $data['CodModule']]);
     	}
 
 	}

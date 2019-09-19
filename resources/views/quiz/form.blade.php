@@ -5,13 +5,14 @@
 @section('conteudo-view')
 
 <main class="content">
-    <h4 class="center-align">Cadastrar Explicação</h4>
+    <h4 class="center-align">Cadastrar Quiz</h4>
     <div class="divider"></div>
 
         <div class="row">
             <div class="col s12 m4 offset-m4  panel-form">
                 <div class="card-panel center-panel row">
-                    <form  class="col s12" method="POST" action="{{ route('create_explain') }}" enctype="multipart/form-data">
+                    {{-- <h2><a href="#" id="addScnt">Add Another Input Box</a></h2> --}}
+                    <form  id="form_quiz" class="col s12" method="POST" action="{{ route('create_explain') }}" enctype="multipart/form-data">
                         @csrf
                         <input type="hidden" name="CodModule" value="">
                         <div class="row">
@@ -33,15 +34,15 @@
 
                         <div class="row">
                             <div class="input-field col s12">
-                                <input id="title" type="text" name="titulo">
-                                <label for="title">Título:</label>
+                                <input id="title" type="text" name="pergunta">
+                                <label for="title">Pergunta:</label>
                             </div>
                         </div>
 
-                        <div class="row">
+                        <div class="row" id="alternativa">
                             <div class="input-field col s12">
-                                <textarea id="descricao" class="materialize-textarea" name="descricao"></textarea>
-                                <label for="descricao">Descrição:</label>
+                                <input id="title" type="text" name="alternativa">
+                                <label for="title">Alternativa:</label>
                             </div>
                         </div>
 
@@ -64,4 +65,28 @@
         </div>
 
 </main>
+
+
+{{-- <script>
+    $(function() {
+        var scntDiv = $('#form_quiz');
+        var i = $('#form_quiz div').size() + 1;
+
+        $('#addScnt').live('click', function() {
+                $("<div class='row' id='alternativa'><div class='input-field col s12'><input id='title' type='text' name='alternativa'><label for='title'>Alternativa:</label></div></div>").appendTo(scntDiv);
+                i++;
+                return false;
+        });
+
+        $('#remScnt').live('click', function() {
+                if( i > 2 ) {
+                    $(this).parents('p').remove();
+                    i--;
+                }
+                return false;
+        });
+});
+
+</script> --}}
+
 @endsection
