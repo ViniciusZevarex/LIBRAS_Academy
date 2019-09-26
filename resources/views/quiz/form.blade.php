@@ -38,13 +38,12 @@
                                 <label for="title">Pergunta:</label>
                             </div>
                         </div>
-
-                        <div class="row" id="alternativa">
-                            <div class="input-field col s12">
-                                <input id="title" type="text" name="alternativa">
-                                <label for="title">Alternativa:</label>
-                            </div>
+                        
+                        <div class="input_fields_wrap">
+                            <!-- Alternativas -->
                         </div>
+
+                        <button type="button" class="btn add_field_button">+ Alternativas</button>
 
                         <div class="row">
                             <div class="input-field col s12">
