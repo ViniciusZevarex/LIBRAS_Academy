@@ -12,7 +12,7 @@
             <div class="col s12 m4 offset-m4  panel-form">
                 <div class="card-panel center-panel row">
                     {{-- <h2><a href="#" id="addScnt">Add Another Input Box</a></h2> --}}
-                    <form  id="form_quiz" class="col s12" method="POST" action="{{ route('create_explain') }}" enctype="multipart/form-data">
+                    <form  id="form_quiz" class="col s12" method="POST" action="{{ route('create_quiz') }}" enctype="multipart/form-data">
                         @csrf
                         <input type="hidden" name="CodModule" value="">
                         <div class="row">
@@ -38,8 +38,14 @@
                                 <label for="title">Pergunta:</label>
                             </div>
                         </div>
-                        
+
                         <div class="input_fields_wrap">
+                                <div class='row' id='alternativa_correta'>
+                                    <div class='input-field col s12'>
+                                        <input id='title' type='text' name='alternativa_correta'>
+                                        <label for="alternativa_correta">Alternativa Correta: </label>
+                                    </div>
+                                </div>
                             <!-- Alternativas -->
                         </div>
 

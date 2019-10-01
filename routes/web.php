@@ -47,3 +47,4 @@ Route::post('/vocabulary/create', 'VocabularyController@create')->name('create_v
 
 //Quiz
 Route::get('/quiz/create/form', 'QuizController@showForm')->name('form_quiz');
+Route::post('/quiz/create','QuizController@create')->name('create_quiz');
