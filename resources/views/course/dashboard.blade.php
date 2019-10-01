@@ -15,16 +15,18 @@
                 <div class="col s8 m8 offset-m2">
                     <ul class="collapsible popout z-depth-2">
                         <li>
-                            <div class="collapsible-header">                        
+                            <div class="collapsible-header">
                             <h6 class="unit-title"><strong>{{ $unit->title }}</strong></h6>
                             </div>
-                            <div class="collapsible-body">                      
+                            <div class="collapsible-body">
                                 <ul class="collection">
                                     @foreach($unit->modules as $module)
                                         <li class="collection-item">
                                             <div class="row">
                                                 <div class="col s12 m10">
-                                                     {{ $module->title }}
+                                                    <a href="{{ route('show_timeline',['module' => $module->CodModule]) }}">
+                                                        {{ $module->title }}
+                                                    </a>
                                                 </div>
                                                 <div class="col s12 m12">
                                                     <a class="btn green darken-1 waves-effect waves-light" href="{{ route('edit_timeline', ['module' => $module->CodModule]) }}">
@@ -43,18 +45,18 @@
                                             </a>
                                         </div>
                                     </li>
-                                </ul>                   
+                                </ul>
                             </div>
                         </li>
                     </ul>
                 </div>
             @endforeach
-            
+
             <a class="btn green darken-1 waves-effect waves-light col s8 m8 offset-m2" href="{{ route('units_showForm', ['course' => $c->CodCourse ]) }}">
                 Adicionar Unidades
                 <i class="material-icons right">add_circle_outline</i>
             </a>
         </div>
-        @endforeach      
+        @endforeach
     </main>
 @endsection

@@ -36,6 +36,7 @@ Route::post('/module/create/', 'ModuleController@store')->name('create_modules')
 //Timeline
 Route::get('/timeline/edit/form', 'TimelineController@edit')->name('edit_timeline');
 Route::post('/timeline/adicionar-elemento/', 'TimelineController@criar_elemento')->name('adicionar_elemento_timeline');
+Route::get('/timeline/show', 'TimelineController@show')->name('show_timeline');
 
 //Explain
 Route::get('/explain/create/form', 'ExplainController@showForm')->name('form_explain');

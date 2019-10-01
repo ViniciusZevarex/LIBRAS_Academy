@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Quiz;
+use App\AlternativesQuiz;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Module;
@@ -14,6 +16,33 @@ class TimelineController extends Controller
     public function edit(Request $data){
 		$module = DB::table('module')->where('CodModule', $data['module'])->get();
     	$module = $module[0];
+
+		$timeline = DB::table('timeline')
+					->select('CodElement', 'typeElement','Position')
+					->where('CodModule', $data['module'])
+					->orderBy('Position')
+					->get();
+
+
+    	return view('timeline.edit',compact('module','timeline'));
+    }
+
+    public function criar_elemento(Request $data){
+
+    	if($data['tipoElemento'] == 'E'){
+    		return redirect()->route('form_explain',['CodModule' => $data['CodModule']]);
+    	}elseif ($data['tipoElemento'] == 'V'){
+    		return redirect()->route('form_vocabulary',['CodModule' => $data['CodModule']]);
+    	}elseif($data['tipoElemento'] == 'Q'){
+    		return redirect()->route('form_quiz',['CodModule' => $data['CodModule']]);
+    	}
+
+    }
+
+
+    public function show(Request $data){
+        $module = DB::table('module')->where('CodModule', $data['module'])->get();
+    	//$module = $module[0];
 
 		$timeline = DB::table('timeline')
 					->select('CodElement', 'typeElement','Position')
@@ -39,23 +68,19 @@ class TimelineController extends Controller
 
 				$tl->dataElement = $vcb;
 			}elseif($tl->typeElement == 'Q'){
-				echo 'Q';
+                $quiz = Quiz::where('CodQuiz', $tl->CodElement)->get();
+
+				foreach($quiz as $qz){
+                    $quz = $qz;
+
+                    $quz->alternatives = AlternativesQuiz::where('CodQuiz',$qz->CodQuiz)->get();
+				}
+
+				$tl->dataElement = $quz;
 			}
-		}
+        }
 
 
-    	return view('timeline.edit',compact('module','timeline'));
+        dd($timeline);
     }
-
-    public function criar_elemento(Request $data){
-
-    	if($data['tipoElemento'] == 'E'){
-    		return redirect()->route('form_explain',['CodModule' => $data['CodModule']]);
-    	}elseif ($data['tipoElemento'] == 'V'){
-    		return redirect()->route('form_vocabulary',['CodModule' => $data['CodModule']]);
-    	}elseif($data['tipoElemento'] == 'Q'){
-    		return redirect()->route('form_quiz',['CodModule' => $data['CodModule']]);
-    	}
-
-	}
 }
