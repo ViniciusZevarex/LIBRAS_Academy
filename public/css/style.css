@@ -186,6 +186,14 @@ div.collapsible-body{
 .form-crud-elements{
 	height: 75vh;
 }
+
+.image-card-timeline{
+	display: block;
+	width: 40%;
+	border: 2px solid;
+	margin: 0 auto;
+}
+
 @media only screen and (max-width: 920px){
 	.parallax-container .section {
 		margin-top: 100px;

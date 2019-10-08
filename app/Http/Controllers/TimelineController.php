@@ -13,40 +13,31 @@ use App\Explain;
 
 class TimelineController extends Controller
 {
-    public function edit(Request $data){
-		$module = DB::table('module')->where('CodModule', $data['module'])->get();
-    	$module = $module[0];
+	public function show(Request $data){
+		$timeline = $this->makeTimeline($data['module']);
 
-		$timeline = DB::table('timeline')
-					->select('CodElement', 'typeElement','Position')
-					->where('CodModule', $data['module'])
-					->orderBy('Position')
-					->get();
+		if(!isset($data['page'])){
+			// dd($timeline[0]);
+			if($timeline[0]->typeElement = 'E'){
+				return view('explain.show');
+			}elseif ($timeline[0]->typeElement = 'V') {
+				
+			}elseif($timeline[0]->typeElement = 'P'){
 
+			}
+		}else{
 
-    	return view('timeline.edit',compact('module','timeline'));
-    }
+		}
 
-    public function criar_elemento(Request $data){
+	}
 
-    	if($data['tipoElemento'] == 'E'){
-    		return redirect()->route('form_explain',['CodModule' => $data['CodModule']]);
-    	}elseif ($data['tipoElemento'] == 'V'){
-    		return redirect()->route('form_vocabulary',['CodModule' => $data['CodModule']]);
-    	}elseif($data['tipoElemento'] == 'Q'){
-    		return redirect()->route('form_quiz',['CodModule' => $data['CodModule']]);
-    	}
-
-    }
-
-
-    public function show(Request $data){
-        $module = DB::table('module')->where('CodModule', $data['module'])->get();
+	public function makeTimeline($CodModule){
+		$module = DB::table('module')->where('CodModule', $CodModule)->get();
     	//$module = $module[0];
 
 		$timeline = DB::table('timeline')
 					->select('CodElement', 'typeElement','Position')
-					->where('CodModule', $data['module'])
+					->where('CodModule', $CodModule)
 					->orderBy('Position')
 					->get();
 
@@ -81,6 +72,32 @@ class TimelineController extends Controller
         }
 
 
-        dd($timeline);
+        return $timeline;
+    }
+
+    public function edit(Request $data){
+		$module = DB::table('module')->where('CodModule', $data['module'])->get();
+    	$module = $module[0];
+
+		$timeline = DB::table('timeline')
+					->select('CodElement', 'typeElement','Position')
+					->where('CodModule', $data['module'])
+					->orderBy('Position')
+					->get();
+
+
+    	return view('timeline.edit',compact('module','timeline'));
+    }
+
+    public function criar_elemento(Request $data){
+
+    	if($data['tipoElemento'] == 'E'){
+    		return redirect()->route('form_explain',['CodModule' => $data['CodModule']]);
+    	}elseif ($data['tipoElemento'] == 'V'){
+    		return redirect()->route('form_vocabulary',['CodModule' => $data['CodModule']]);
+    	}elseif($data['tipoElemento'] == 'Q'){
+    		return redirect()->route('form_quiz',['CodModule' => $data['CodModule']]);
+    	}
+
     }
 }
