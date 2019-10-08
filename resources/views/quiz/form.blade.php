@@ -46,6 +46,7 @@
                                         <label for="alternativa_correta">Alternativa Correta: </label>
                                     </div>
                                 </div>
+                                
                             <!-- Alternativas -->
                         </div>
 
@@ -72,7 +73,7 @@
 </main>
 
 
-{{-- <script>
+<script>
     $(function() {
         var scntDiv = $('#form_quiz');
         var i = $('#form_quiz div').size() + 1;
@@ -92,6 +93,6 @@
         });
 });
 
-</script> --}}
+</script>
 
 @endsection
