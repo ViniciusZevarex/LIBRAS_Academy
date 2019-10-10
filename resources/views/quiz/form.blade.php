@@ -87,8 +87,7 @@
         $('#remScnt').live('click', function() {
                 if( i > 2 ) {
                     $(this).parents('p').remove();
-                    i--;
-                }
+                    i--; }
                 return false;
         });
 });

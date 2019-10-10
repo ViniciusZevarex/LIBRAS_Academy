@@ -1,19 +1,21 @@
 @extends('layouts.master')
 
 @section('conteudo-view')
-
 <main class="content">
-    <div class="row">
-        <div class="col s12 m6 offset-m3 card-center">
-            <div class="card-panel">
-                <h3 class="text-center">Título da Explicação</h3>
+    <div class="row timeline-element">
+            <div class="col s12 m4 offset-m4 card-center">
+                <div class="card-panel card-course-element row">
 
-                <img class="image-card-timeline" src="{{ asset('imgs/img_website_style/upload.png') }}">
+                    <h3 class="text-center">{{ $data->dataElement->title }}</h3>
+                    <img class="image-card-timeline" src="{{ url('/storage/' . $data->dataElement->video) }}">
 
-                <div class="divider"></div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam aliquam, labore sunt odit assumenda inventore atque neque ipsum beatae corporis error ut? Animi velit eum ex suscipit, totam facilis reprehenderit.</p>
+                    <div class="divider"></div>
+                    <p class="p-card-element">{{ $data->dataElement->description }}</p>
+                    <a class="btn waves-effect waves-light col s6 m4 l2">Voltar</a>
+                    <div class="col s12 m4 l8"></div>
+                    <a class="btn waves-effect waves-light col s6 m4 l2" href="{{ route('show_timeline', ['module' => $_GET['module'],'page' => $data->Position + 1]) }}">Próximo</a>
+                </div>
             </div>
-        </div>
     </div>
 </main>
 @endsection

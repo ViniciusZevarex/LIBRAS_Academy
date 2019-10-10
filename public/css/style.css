@@ -1,218 +1,244 @@
-.inner-hero{
-	margin-top: 100px;
-	width     : 100%;
-	text-align: center;
-	color     : white;
-}
-h1.title-hero{
-	font-size: 7em;
+.inner-hero {
+    margin-top: 100px;
+    width: 100%;
+    text-align: center;
+    color: white;
 }
 
-h2.title-hero{
-	margin-top : -17px;
-	font-size  : 1.7em;
-	text-align : center;
-	font-weight: 400;
+h1.title-hero {
+    font-size: 7em;
+}
+
+h2.title-hero {
+    margin-top: -17px;
+    font-size: 1.7em;
+    text-align: center;
+    font-weight: 400;
 }
 
 .parallax-container {
-	min-height: 700px;
-	height    : auto;
-	color     : rgba(255,255,255,.9);
-}
-.section-parallax{
-	min-height: 380px;
-	color     : white;
-}
-.parallax-container .section{
-	width: 100%;
+    min-height: 700px;
+    height: auto;
+    color: rgba(255, 255, 255, .9);
 }
 
-.text-center{
-	text-align: center;
+.section-parallax {
+    min-height: 380px;
+    color: white;
 }
 
-.text{
-	font-size: 1.3em;
+.parallax-container .section {
+    width: 100%;
 }
 
-.text-justify{
-	text-align: justify;
+.text-center {
+    text-align: center;
 }
 
-section.container{
-	min-height: 600px;
-	padding   : 2%;
+.text {
+    font-size: 1.3em;
 }
-.icon-container{
-	text-align: center;
-	color     : black;
-	margin    : 10% 0 10% 0;
+
+.text-justify {
+    text-align: justify;
 }
+
+section.container {
+    min-height: 600px;
+    padding: 2%;
+}
+
+.icon-container {
+    text-align: center;
+    color: black;
+    margin: 10% 0 10% 0;
+}
+
 
 /* .card-panel{
 	min-height: 500px;
 } */
-.card-panel{
-	clear:both;
+
+.card-panel {
+    clear: both;
 }
 
-h2.main-text-section{
-	margin-top: 150px;
+h2.main-text-section {
+    margin-top: 150px;
 }
 
-.footer-copyright{
-	text-align: center;
+.footer-copyright {
+    text-align: center;
 }
+
 .sidenav-trigger {
-  color: white;
+    color: white;
 }
 
-.panel-form{
-	margin-top   : 30px;
-	padding      : 10%;
-	border-radius: 40px;
+.panel-form {
+    margin-top: 30px;
+    padding: 10%;
+    border-radius: 40px;
 }
+
 .body-register {
-	background-image: url('../imgs/img_website_style/register-background.jpg');
-	background-size : 100%;
+    background-image: url('../imgs/img_website_style/register-background.jpg');
+    background-size: 100%;
 }
 
-.website-logo{
-	width: 120px;
-}
-.text-brand{
-	font-size  : 0.675em;
-	position   : absolute;
-	top        : 0;
-	width      : 100%;
-	font-family: 'Staatliches', cursive;
+.website-logo {
+    width: 120px;
 }
 
-.form-logo{
-	width : 300px;
-	margin: -10% auto;
+.text-brand {
+    font-size: 0.675em;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    font-family: 'Staatliches', cursive;
 }
 
-.img-upload{
-	padding: 5%;
-	background-color: #ececec;
-	border: solid 1px black;
-	display: block;
-	width : 300px;
-	margin: 0 auto;	
+.form-logo {
+    width: 300px;
+    margin: -10% auto;
 }
 
-.title-hero img{
-	width        : 300px;
-	display      : block;
-	margin       : auto;
-	margin-bottom: -30px;
+.img-upload {
+    padding: 5%;
+    background-color: #ececec;
+    border: solid 1px black;
+    display: block;
+    width: 300px;
+    margin: 0 auto;
 }
 
-.sidebar{
-	position        : fixed;
-	top             : 0;
-	height          : 100%;
-	width           : 90px;
-	background-color: #43A047;
+.title-hero img {
+    width: 300px;
+    display: block;
+    margin: auto;
+    margin-bottom: -30px;
 }
 
-.sidebar ul li{
-	color     : white;
-	list-style: none;
-	padding   : 15px 10px;
-	text-align: center;
-}
-div.sidebar-brand-logo{
-	padding-bottom: 90px;
-}
-h4.text-brand-sidebar{
-	width      : 100%;
-	font-family: 'Staatliches', cursive;
-}
-div.sidebar-brand-logo img{
-	padding: 15px 10px;
-	width  : 100%;
-}
-div.sidebar ul li a{
-	text-decoration: none;
-	color          : white;
+.sidebar {
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 90px;
+    background-color: #43A047;
 }
 
-img.unit-icon{
-	width       : 40px;
-	height: 40px;
-	margin-right: 4%;
+.sidebar ul li {
+    color: white;
+    list-style: none;
+    padding: 15px 10px;
+    text-align: center;
 }
-.unit-title{
-	font-size  : 1.5em;
-	font-family: 'Staatliches', cursive;
+
+div.sidebar-brand-logo {
+    padding-bottom: 90px;
 }
+
+h4.text-brand-sidebar {
+    width: 100%;
+    font-family: 'Staatliches', cursive;
+}
+
+div.sidebar-brand-logo img {
+    padding: 15px 10px;
+    width: 100%;
+}
+
+div.sidebar ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+img.unit-icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 4%;
+}
+
+.unit-title {
+    font-size: 1.5em;
+    font-family: 'Staatliches', cursive;
+}
+
+
 /* animação com scroll*/
-.anime-scroll-right{
-	opacity   : 0;
-	transform : translate3d(100px,0,0);
-	transition: .99s;
+
+.anime-scroll-right {
+    opacity: 0;
+    transform: translate3d(100px, 0, 0);
+    transition: .99s;
 }
 
-.anime-scroll-left{
-	opacity   : 0;
-	transform : translate3d(-100px,0,0);
-	transition: .99s;
+.anime-scroll-left {
+    opacity: 0;
+    transform: translate3d(-100px, 0, 0);
+    transition: .99s;
 }
 
-.anime-start{
-	opacity  : 1;
-	transform: translate3d(0,0,0);
+.anime-start {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
 }
 
-
-div.collapsible-body{
-	padding: 0.1em;
+div.collapsible-body {
+    padding: 0.1em;
 }
 
-.center-panel{
-	display: block;
-	margin: 0 auto;
-	padding: 25%;
-	box-shadow: 13px 20px 127px -67px black;
+.center-panel {
+    display: block;
+    margin: 0 auto;
+    padding: 25%;
+    box-shadow: 13px 20px 127px -67px black;
 }
 
-.form-auth{
-	height: 95vh;
+.form-auth {
+    height: 95vh;
 }
 
-.form-crud-elements{
-	height: 75vh;
+.form-crud-elements {
+    height: 75vh;
 }
 
-.image-card-timeline{
-	display: block;
-	width: 40%;
-	border: 2px solid;
-	margin: 0 auto;
+.image-card-timeline {
+    display: block;
+    width: 40%;
+    border: 2px solid;
+    margin: 0 auto;
 }
 
-@media only screen and (max-width: 920px){
-	.parallax-container .section {
-		margin-top: 100px;
-	}
-	.section {
-		top: 10%;
-	}
+.card-course-element {
+    margin: 8rem 0 0 0 !important;
+    min-height: 500px !important;
 }
-@media only screen and (max-width: 540px){
-	.inner-hero{
-		margin-top: 150px;
-	}
-	h1.title-hero{
-		font-size: 5em;
-	}
-	h2.title-hero{
-		font-size: 1.4em;
-	}
-	#index-banner .section {
-		top: 0;
-	}
+
+.p-card-element {
+    padding: 3%;
+}
+
+@media only screen and (max-width: 920px) {
+    .parallax-container .section {
+        margin-top: 100px;
+    }
+    .section {
+        top: 10%;
+    }
+}
+
+@media only screen and (max-width: 540px) {
+    .inner-hero {
+        margin-top: 150px;
+    }
+    h1.title-hero {
+        font-size: 5em;
+    }
+    h2.title-hero {
+        font-size: 1.4em;
+    }
+    #index-banner .section {
+        top: 0;
+    }
 }

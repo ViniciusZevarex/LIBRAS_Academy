@@ -14,19 +14,28 @@ use App\Explain;
 class TimelineController extends Controller
 {
 	public function show(Request $data){
-		$timeline = $this->makeTimeline($data['module']);
+        $timeline = $this->makeTimeline($data['module']);
 
 		if(!isset($data['page'])){
-			// dd($timeline[0]);
-			if($timeline[0]->typeElement = 'E'){
-				return view('explain.show');
-			}elseif ($timeline[0]->typeElement = 'V') {
-				
-			}elseif($timeline[0]->typeElement = 'P'){
-
+			$data = $timeline[0];
+			if($timeline[0]->typeElement == 'E'){
+				return view('explain.show')->with('data',$data);
+			}elseif ($timeline[0]->typeElement == 'V') {
+				return view('vocabulary.show');
+			}elseif($timeline[0]->typeElement == 'P'){
+                return view('quiz.show');
 			}
 		}else{
+            $page = $data['page'] - 1;
+            $data = $timeline[$page];
 
+            if($timeline[$page]->typeElement == 'E'){
+				return view('explain.show')->with('data',$data);
+			}elseif ($timeline[$page]->typeElement == 'V') {
+				return view('vocabulary.show')->with('data',$data);
+			}elseif($timeline[$page]->typeElement == 'P'){
+                return view('quiz.show')->with('data',$data);
+			}
 		}
 
 	}
