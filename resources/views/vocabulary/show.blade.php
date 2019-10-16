@@ -10,7 +10,7 @@
 
                 <div class="divider"></div>
                 <h4 class="text-center">Significado: {{ $data->dataElement->meaning}}</h4>
-                <a class="btn waves-effect waves-light col s6 m4 l2">Voltar</a>
+                <a class="btn waves-effect waves-light col s6 m4 l2" href="{{ route('show_timeline', ['module' => $_GET['module'],'page' => $data->Position - 1]) }}">Voltar</a>
                 <div class="col s12 m4 l8"></div>
                 <a class="btn waves-effect waves-light col s6 m4 l2" href="{{ route('show_timeline', ['module' => $_GET['module'],'page' => $data->Position + 1]) }}">Próximo</a>
             </div>

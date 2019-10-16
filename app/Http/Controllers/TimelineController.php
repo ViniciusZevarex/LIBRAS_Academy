@@ -27,6 +27,10 @@ class TimelineController extends Controller
 			}
 		}else{
             $page = $data['page'] - 1;
+            if($page == -1){
+                $page = 0;
+            }
+
             $data = $timeline[$page];
 
             if($timeline[$page]->typeElement == 'E'){

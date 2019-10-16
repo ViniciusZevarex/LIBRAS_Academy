@@ -205,7 +205,7 @@ div.collapsible-body {
 
 .image-card-timeline {
     display: block;
-    width: 40%;
+    width: 100%;
     border: 2px solid;
     margin: 0 auto;
 }
