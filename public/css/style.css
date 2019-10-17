@@ -219,6 +219,12 @@ div.collapsible-body {
     padding: 3%;
 }
 
+.element-center {
+    width: 50%;
+    display: block;
+    margin: 2% auto;
+}
+
 @media only screen and (max-width: 920px) {
     .parallax-container .section {
         margin-top: 100px;

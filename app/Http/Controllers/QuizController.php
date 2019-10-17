@@ -70,4 +70,13 @@ class QuizController extends Controller
             }
     	}
     }
+
+    public function correct(Request $data){
+        if($data['alternative']){
+            return redirect()->route('show_timeline', ['module' => $data['module'],'page' => $data['page'] + 1]);
+        }else{
+            return redirect()->route('show_timeline', ['module' => $data['module'],'page' => $data['page']])->with('incorrect','Alternativa Incorreta, Tente Novamente!');
+        }
+
+    }
 }

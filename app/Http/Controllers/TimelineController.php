@@ -10,6 +10,7 @@ use App\Module;
 use App\Vocabulary;
 use App\Timeline;
 use App\Explain;
+use App\Http\Controllers\QuizController;
 
 class TimelineController extends Controller
 {
@@ -37,7 +38,7 @@ class TimelineController extends Controller
 				return view('explain.show')->with('data',$data);
 			}elseif ($timeline[$page]->typeElement == 'V') {
 				return view('vocabulary.show')->with('data',$data);
-			}elseif($timeline[$page]->typeElement == 'P'){
+			}elseif($timeline[$page]->typeElement == 'Q'){
                 return view('quiz.show')->with('data',$data);
 			}
 		}
