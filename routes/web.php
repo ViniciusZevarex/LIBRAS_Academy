@@ -21,8 +21,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //Course
 Route::get('/course/dashboard', 'CourseController@dashboard')->name('course_dashboard');
-Route::get('/course/create/form', 'CourseController@create')->name('course_create');
-Route::post('/course/create', 'CourseController@register')->name('course_register');
+Route::get('/course/create/form', 'CourseController@showForm')->name('course_create');
+Route::post('/course/create', 'CourseController@store')->name('course_store');
+Route::get('/course/edit/form', 'CourseController@showform')->name('course_edit_form');
+Route::post('/course/edit', 'CourseController@edit')->name('course_edit');
 Route::get('/course/list', 'CourseController@list')->name('course_list');
 
 //Unit

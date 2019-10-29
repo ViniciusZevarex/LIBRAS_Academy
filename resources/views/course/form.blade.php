@@ -3,6 +3,13 @@
 @include('components.navbar_dashboard')
 
 @section('conteudo-view')
+
+@if(isset($atividades))
+    $action = route('course_edit');
+@else
+    $action = route('course_store');
+@endif
+
 <main class="content">
         <h4 class="center-align">Cadastrar Curso</h4>
         <div class="divider"></div>
@@ -13,7 +20,7 @@
             <div class="card-panel center-panel row">
                 <h4 class="center-align"><img src="{{asset('imgs/img_website_style/black-logo.png')}}" class="form-logo"></h4>
 
-                <form  class="col s12" method="POST" action="{{ route('course_register') }}">
+                <form  class="col s12" method="POST" action="{{ route('course_store') }}">
                     @csrf
                     {{-- titulo --}}
                     <div class="row">
@@ -30,18 +37,18 @@
                         </div>
                     </div>
 
-                    <div class="row">              
+                    <div class="row">
                         <button class="btn waves-effect waves-light col s12 m12" type="submit" name="action">Cadastrar
                         <i class="material-icons right">create</i>
                         </button>
                     </div>
-        
+
                 </form>
             </div>
             </div>
         </div>
-            
-            
-        </div>      
+
+
+        </div>
     </main>
 @endsection

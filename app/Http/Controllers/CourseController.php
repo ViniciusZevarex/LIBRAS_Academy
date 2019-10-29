@@ -29,16 +29,21 @@ class CourseController extends Controller
         foreach($course as $c){
             $c->units = $unit;
         }
-        
+
         return view('course/dashboard', compact('course'));
     }
 
-    public function create()
+    public function showForm(Request $data)
     {
-    	return view('course/create');
+        if(isset($data->CodCourse)){
+            $course = Course::where('CodCourse',$data->CodCoruse)->get();
+            return view('course/form')->with('course',$course);
+        }else{
+            return view('course/form');
+        }
     }
 
-    public function register(Request $request)
+    public function store(Request $request)
     {
         $course                     =  new Course();
         $course->title              =  $request->input('title');
@@ -52,6 +57,10 @@ class CourseController extends Controller
         $courses = DB::table('course')->get();
 
         return view('course/list', compact('courses'));
+    }
+
+    public function update(Request $data){
+
     }
 
 }
