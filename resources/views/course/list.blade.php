@@ -19,7 +19,7 @@
                             <a class="waves-effect waves-light btn" href="{{ route('course_dashboard', ['course' => $course->CodCourse]) }}">Ver conteúdo</a>
                             <a class="waves-effect waves-light btn" href="#">Inscrever-se</a>
                             <a class="waves-effect waves-light btn" href="{{ route('course_edit_form', ['course' => $course->CodCourse]) }}"><i class="large material-icons">edit</i></a>
-                            <a class="waves-effect waves-light btn" href=""><i class="large material-icons">delete</i></a>
+                            <a class="waves-effect waves-light btn" href="{{ route('course_delete', ['course' => $course->CodCourse]) }}"><i class="large material-icons">delete</i></a>
                         </div>
                     </div>
                 </div>

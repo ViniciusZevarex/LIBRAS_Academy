@@ -9,5 +9,6 @@ class Course extends Model
     protected   $table          = 'course';
     public      $timestamps     = false;
     protected   $fillable       = array('title','description');
+    protected $primaryKey = 'CodCourse';
     protected   $guarded        = ['CodCourse'];
 }

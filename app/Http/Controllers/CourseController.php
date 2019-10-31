@@ -35,8 +35,9 @@ class CourseController extends Controller
 
     public function showForm(Request $data)
     {
-        if(isset($data->CodCourse)){
-            $course = Course::where('CodCourse',$data->CodCoruse)->get();
+        if(isset($data->course)){
+            $course = DB::table('course')->where('CodCourse',$data->course)->get();
+
             return view('course/form')->with('course',$course);
         }else{
             return view('course/form');
@@ -60,7 +61,18 @@ class CourseController extends Controller
     }
 
     public function update(Request $data){
+        $course = Course::findOrFail($data->CodCourse);
+        $course->Title = $data->title;
+        $course->description = $data->description;
+        $course->save();
 
+        return redirect()->route('course_list');
+    }
+
+    public function delete(Request $data){
+        DB::table('users')->where('CodCourse',$data->course)->delete();
+
+        return redirect()->back();
     }
 
 }

@@ -24,8 +24,9 @@ Route::get('/course/dashboard', 'CourseController@dashboard')->name('course_dash
 Route::get('/course/create/form', 'CourseController@showForm')->name('course_create');
 Route::post('/course/create', 'CourseController@store')->name('course_store');
 Route::get('/course/edit/form', 'CourseController@showform')->name('course_edit_form');
-Route::post('/course/edit', 'CourseController@edit')->name('course_edit');
+Route::post('/course/edit', 'CourseController@update')->name('course_edit');
 Route::get('/course/list', 'CourseController@list')->name('course_list');
+Route::get('/course/delete','CourseController@delete')->course('course_delete');
 
 //Unit
 Route::get('/unit/create/form', 'UnitController@showForm')->name('units_showForm');

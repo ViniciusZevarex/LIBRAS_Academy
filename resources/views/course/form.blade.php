@@ -3,13 +3,13 @@
 @include('components.navbar_dashboard')
 
 @section('conteudo-view')
-
-@if(isset($atividades))
+<?php 
+if(isset($course)){
     $action = route('course_edit');
-@else
+}else{
     $action = route('course_store');
-@endif
-
+}
+?>
 <main class="content">
         <h4 class="center-align">Cadastrar Curso</h4>
         <div class="divider"></div>
@@ -20,19 +20,22 @@
             <div class="card-panel center-panel row">
                 <h4 class="center-align"><img src="{{asset('imgs/img_website_style/black-logo.png')}}" class="form-logo"></h4>
 
-                <form  class="col s12" method="POST" action="{{ route('course_store') }}">
+                <form  class="col s12" method="POST" action="{{ $action }}">
                     @csrf
+                    
+                    <input type="hidden" name="CodCourse" value="{{ isset($course) ? $course[0]->CodCourse : "" }}">
                     {{-- titulo --}}
+                    
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="titulo" type="text" class="validate" name="title">
+                            <input id="titulo" type="text" class="validate" name="title" value="{{ isset($course) ? $course[0]->title : "" }}" >
                             <label for="titulo">Título</label>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="input-field col s12">
-                            <textarea id="textarea2" class="materialize-textarea" data-length="120" name="description"></textarea>
+                            <textarea id="textarea2" class="materialize-textarea" data-length="120" name="description">{{ isset($course) ? $course[0]->description : "" }}</textarea>
                             <label for="textarea2">Descrição</label>
                         </div>
                     </div>
